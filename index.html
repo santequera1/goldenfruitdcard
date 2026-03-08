@@ -58,15 +58,6 @@
     .header { text-align: center; margin: -24px -16px 8px; }
     .header img { width: 100%; height: auto; display: block; }
 
-    /* SITE LINK */
-    .site-link {
-      display: block; text-align: center; margin-bottom: 16px; padding: 10px;
-      font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
-      color: var(--yellow); text-decoration: none; transition: opacity 0.3s;
-    }
-    .site-link:hover { opacity: 0.8; }
-    .site-link span.url { text-decoration: underline; }
-
     /* SOCIAL */
     .social-icons { display: flex; justify-content: center; gap: 14px; margin-bottom: 20px; }
     .social-icon {
@@ -285,13 +276,11 @@
     <img src="banner- principal.jpeg" alt="GoldenFruit SAS">
   </div>
 
-  <!-- SITE LINK -->
-  <a href="https://goldenfruit.com.co/" class="site-link animate delay-2" target="_blank" rel="noopener">
-    <span data-lang="es">Visita nuestro sitio web</span><span data-lang="en">Visit our website</span> — <span class="url">goldenfruit.com.co</span>
-  </a>
-
   <!-- SOCIAL -->
   <div class="social-icons animate delay-2">
+    <a href="https://goldenfruit.com.co/" class="social-icon" target="_blank" rel="noopener" aria-label="Website">
+      <svg viewBox="0 0 24 24" fill="var(--yellow)"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+    </a>
     <a href="https://www.facebook.com/goldenfruitsas" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
       <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
     </a>
@@ -379,6 +368,10 @@
           <p class="detail-text" data-lang="es">Color verde consistente, sin quemaduras solares ni dano superficial.</p>
           <p class="detail-text" data-lang="en">Consistently green, with no signs of sunburn or surface damage.</p>
         </div>
+        <figure class="detail-photo" onclick="openLightbox(this)">
+          <img src="galeria/741530df-4043-4286-9345-96f885a908d4.jpg" alt="Limón Tahiti" loading="lazy">
+          <figcaption><span data-lang="es">Limón Tahiti fresco listo para exportación</span><span data-lang="en">Fresh Tahiti limes ready for export</span></figcaption>
+        </figure>
       </div>
     </div>
 
