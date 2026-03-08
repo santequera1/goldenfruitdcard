@@ -55,8 +55,17 @@
     .delay-5 { animation-delay: 0.5s; }
 
     /* HEADER */
-    .header { text-align: center; margin-bottom: 8px; }
-    .header img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+    .header { text-align: center; margin: -24px -16px 8px; }
+    .header img { width: 100%; height: auto; display: block; }
+
+    /* SITE LINK */
+    .site-link {
+      display: block; text-align: center; margin-bottom: 16px; padding: 10px;
+      font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+      color: var(--yellow); text-decoration: none; transition: opacity 0.3s;
+    }
+    .site-link:hover { opacity: 0.8; }
+    .site-link span.url { text-decoration: underline; }
 
     /* SOCIAL */
     .social-icons { display: flex; justify-content: center; gap: 14px; margin-bottom: 20px; }
@@ -273,8 +282,13 @@
 
   <!-- HEADER -->
   <div class="header animate delay-1">
-    <img src="banner- principal.jpeg" alt="GoldenFruit SAS" style="width:100%; border-radius:16px;">
+    <img src="banner- principal.jpeg" alt="GoldenFruit SAS">
   </div>
+
+  <!-- SITE LINK -->
+  <a href="https://goldenfruit.com.co/" class="site-link animate delay-2" target="_blank" rel="noopener">
+    <span data-lang="es">Visita nuestro sitio web</span><span data-lang="en">Visit our website</span> — <span class="url">goldenfruit.com.co</span>
+  </a>
 
   <!-- SOCIAL -->
   <div class="social-icons animate delay-2">
