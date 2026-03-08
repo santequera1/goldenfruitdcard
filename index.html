@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    html { scroll-behavior: smooth; }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --red: #FF3B04;
@@ -55,12 +56,7 @@
 
     /* HEADER */
     .header { text-align: center; margin-bottom: 8px; }
-    .header img { width: 200px; height: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
-    .slogan {
-      text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 700;
-      font-size: 14px; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--yellow); margin-bottom: 20px;
-    }
+    .header img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
 
     /* SOCIAL */
     .social-icons { display: flex; justify-content: center; gap: 14px; margin-bottom: 20px; }
@@ -229,6 +225,26 @@
     .footer { text-align: center; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); }
     .footer p { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.6; }
     .footer .brand { font-family: 'Montserrat', sans-serif; font-weight: 700; color: rgba(255,255,255,0.6); }
+    .back-top {
+      display: inline-block; margin-bottom: 12px; padding: 8px 20px; border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);
+      font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 700;
+      text-decoration: none; transition: all 0.3s ease; letter-spacing: 0.5px;
+    }
+    .back-top:hover { border-color: var(--yellow); color: var(--yellow); transform: translateY(-2px); }
+
+    /* GALLERY */
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+    .gallery-item {
+      border-radius: 12px; overflow: hidden; cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.08); transition: transform 0.3s ease;
+    }
+    .gallery-item:hover { transform: scale(1.02); }
+    .gallery-item img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .gallery-item figcaption {
+      padding: 6px 8px; font-size: 10px; color: rgba(255,255,255,0.6);
+      background: rgba(0,0,0,0.4); line-height: 1.3;
+    }
 
     /* LIGHTBOX */
     .lightbox {
@@ -257,9 +273,8 @@
 
   <!-- HEADER -->
   <div class="header animate delay-1">
-    <img src="logo-goldenfruit.png" alt="GoldenFruit SAS">
+    <img src="banner- principal.jpeg" alt="GoldenFruit SAS" style="width:100%; border-radius:16px;">
   </div>
-  <div class="slogan animate delay-1">100% Colombian · 100% Quality</div>
 
   <!-- SOCIAL -->
   <div class="social-icons animate delay-2">
@@ -309,11 +324,9 @@
     </a>
   </div>
 
-  <!-- BADGE -->
-  <div class="badge-highlight animate delay-5">
-    <span data-lang="es">Unica empresa colombiana autorizada para exportar pimenton a Panama</span>
-    <span data-lang="en">Only Colombian company authorized to export bell peppers to Panama</span>
-    <img class="panama-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama.svg" alt="Panama">
+  <!-- BADGE PIMENTON -->
+  <div class="animate delay-5" style="margin-bottom:28px;">
+    <img src="aji-pimenton.jpeg" alt="Ají Pimentón — Exportación exclusiva a Panamá" style="width:100%; border-radius:16px; display:block; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" loading="lazy">
   </div>
 
   <!-- PRODUCTS -->
@@ -555,10 +568,7 @@
       </div>
     </div>
 
-    <!-- 8. PIMENTON -->
-    <div class="product-item animate delay-5" style="cursor:pointer;" onclick="openLightbox(this)">
-      <img src="aji-pimenton.jpg" alt="Ají Pimentón — Exportación exclusiva a Panamá" style="width:100%; border-radius:16px; display:block;" loading="lazy">
-    </div>
+   
 
   </div>
 
@@ -603,8 +613,73 @@
     </div>
   </div>
 
+  <!-- GALLERY -->
+  <div class="section-title animate delay-5">
+    <span data-lang="es">Galeria</span>
+    <span data-lang="en">Gallery</span>
+  </div>
+  <div class="gallery animate delay-5">
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/248f6722-c107-417b-b565-3963943404b1.jpg" alt="Limon Tahiti" loading="lazy">
+      <figcaption><span data-lang="es">Limon Tahiti seleccionado en caja de exportacion</span><span data-lang="en">Tahiti lime selected in export box</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/45c8872e-4d52-4159-bcf7-8fa1f06d7dc1.jpg" alt="Limon Tahiti" loading="lazy">
+      <figcaption><span data-lang="es">Limon Tahiti calibre uniforme listo para empaque</span><span data-lang="en">Uniform caliber Tahiti lime ready for packing</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/7476fc9f-c36e-4a0b-83c5-0f981fcc7da0.jpg" alt="Limon Tahiti" loading="lazy">
+      <figcaption><span data-lang="es">Caja de limon Tahiti en bodega de despacho</span><span data-lang="en">Tahiti lime box in dispatch warehouse</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/d0701940-373c-4394-9833-7da9ce65dcd4.jpg" alt="Limon Tahiti" loading="lazy">
+      <figcaption><span data-lang="es">Cajas de limon Tahiti apiladas listas para contenedor</span><span data-lang="en">Stacked Tahiti lime boxes ready for container</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/741530df-4043-4286-9345-96f885a908d4.jpg" alt="Limon Tahiti" loading="lazy">
+      <figcaption><span data-lang="es">Limon Tahiti fresco en caja de madera</span><span data-lang="en">Fresh Tahiti lime in wooden crate</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/3533d8a0-223d-429f-a2d9-a48cb3d8cfb3.jpg" alt="Naranjas" loading="lazy">
+      <figcaption><span data-lang="es">Naranjas colombianas en caja de exportacion</span><span data-lang="en">Colombian oranges in export box</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/60d7208c-9b73-4a18-a678-40ba38439919.jpg" alt="Naranjas" loading="lazy">
+      <figcaption><span data-lang="es">Naranjas frescas seleccionadas por calibre</span><span data-lang="en">Fresh oranges selected by caliber</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/df2b8272-a1ca-4855-82d3-937452794480.jpg" alt="Naranjas" loading="lazy">
+      <figcaption><span data-lang="es">Cajas de naranjas en bodega de empaque</span><span data-lang="en">Orange boxes in packing warehouse</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/604850cc-3381-4dd6-8f99-77802c87deb5.jpg" alt="Pimenton rojo" loading="lazy">
+      <figcaption><span data-lang="es">Pimenton rojo empacado para exportacion a Panama</span><span data-lang="en">Red bell pepper packed for export to Panama</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/a8a6ee0c-ec5e-4265-a6f4-4beffd4d4980.jpg" alt="Pimenton naranja" loading="lazy">
+      <figcaption><span data-lang="es">Pimenton naranja en caja de despacho</span><span data-lang="en">Orange bell pepper in dispatch box</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/ab8f7cdf-4cf6-4180-8f61-780cd892603e.jpg" alt="Pimenton amarillo" loading="lazy">
+      <figcaption><span data-lang="es">Pimenton amarillo listo para exportacion</span><span data-lang="en">Yellow bell pepper ready for export</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/d92d75a3-77af-4524-8c27-ce494fbd470f.jpg" alt="Pimenton verde-amarillo" loading="lazy">
+      <figcaption><span data-lang="es">Pimenton verde-amarillo en caja de exportacion</span><span data-lang="en">Green-yellow bell pepper in export box</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/639a9b8f-90f0-4191-aa24-d6a326bdaf9c.jpg" alt="Etiqueta de exportacion" loading="lazy">
+      <figcaption><span data-lang="es">Etiqueta de exportacion GoldenFruit SAS — Citrons vert Tahiti 18 Kg</span><span data-lang="en">GoldenFruit SAS export label — Citrons vert Tahiti 18 Kg</span></figcaption>
+    </figure>
+    <figure class="gallery-item" onclick="openLightbox(this)">
+      <img src="galeria/9ee994c5-a9e7-472f-b96e-01c1b515b5f1.jpg" alt="Bodega de empaque" loading="lazy">
+      <figcaption><span data-lang="es">Proceso de empaque y paletizado en bodega</span><span data-lang="en">Packing and palletizing process in warehouse</span></figcaption>
+    </figure>
+  </div>
+
   <!-- FOOTER -->
   <div class="footer animate delay-5">
+    <a href="#" class="back-top"><span data-lang="es">Volver arriba</span><span data-lang="en">Back to top</span></a>
     <p><span class="brand">GOLDENFRUIT SAS</span></p>
     <p>&copy; 2026 · 100% Colombian, 100% Quality</p>
   </div>
